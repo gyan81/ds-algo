@@ -1,18 +1,6 @@
 package com.mac.java.algorithm.sorting;
 
-import java.util.Arrays;
-
 public class QuickSort {
-
-    public static void main(String[] args) {
-        int[] data = {22, 43, 3, 21, 12, 31, 1, 2, 19, 10};
-//        int[] data = {9, 8, 7, 6, 5, 4, 3, 2, 1};
-//        int[] data = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        QuickSort quickSort = new QuickSort();
-        System.out.println("Before Sorting : " + Arrays.toString(data));
-        quickSort.sort(data, 0, data.length - 1);
-        System.out.println("After Sorting : " + Arrays.toString(data));
-    }
 
     public void sort(int[] data, int l, int r) {
         if (l < r) {
