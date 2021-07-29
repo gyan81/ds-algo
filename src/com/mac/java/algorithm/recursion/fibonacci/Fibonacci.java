@@ -34,7 +34,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         Fibonacci fibonacci = new Fibonacci();
-        System.out.println(fibonacci.getNthFib(6));
+        System.out.println(fibonacci.getNthFib(50));
 //        System.out.println(fibonacci.fiboIterative(7));
     }
 
