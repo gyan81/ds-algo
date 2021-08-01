@@ -13,11 +13,10 @@ public class BoyerMoore {
                 while (j >= 0 && pattern.charAt(j) == text.charAt(s + j)) {
                     j--;
                 }
-                if (j >= 0) {
-                    int x = table[text.charAt(s + j)];
-                    s += x >= 0 ? m - x - 1 : 1;
-                } else {
+                if (j < 0) {
                     return s;
+                } else {
+                    s += Math.max(j - table[text.charAt(s + j)], 1);
                 }
             }
         }
