@@ -6,7 +6,6 @@ public class StringSubSequence {
         String str = "abc";
         StringSubSequence stringSubSequence = new StringSubSequence();
         System.out.println(stringSubSequence.getSubSequences(str));
-
     }
 
     public String getSubSequences(String str) {
@@ -25,3 +24,4 @@ public class StringSubSequence {
     }
 
 }
+// c, b, bc

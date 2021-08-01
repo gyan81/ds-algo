@@ -2,8 +2,6 @@ package com.mac.java.algorithm.pattern.matching;
 
 public class RabinKarp {
 
-
-
     public int solution(String text, String pattern) {
         int textLength = text.length(), patternLength = pattern.length();
         if (textLength >= patternLength) {
