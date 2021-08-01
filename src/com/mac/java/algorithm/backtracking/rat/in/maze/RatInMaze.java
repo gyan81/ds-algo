@@ -1,7 +1,5 @@
 package com.mac.java.algorithm.backtracking.rat.in.maze;
 
-import java.util.Arrays;
-
 public class RatInMaze {
 
     public boolean solution(int[][] maze, int[][] solMaze, int row, int col, int n) {
