@@ -1,4 +1,4 @@
-package com.mac.java.interview.problems.wallmart;
+package com.mac.java.interview.problems.walmart;
 
 import java.util.ArrayList;
 import java.util.Collections;
