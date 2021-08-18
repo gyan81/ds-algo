@@ -37,4 +37,17 @@ class BoyerMooreTest {
         int index = boyerMoore.solution("AACAABCD", "ABC");
         assertEquals(4, index);
     }
+
+    @Test
+    void solution5() {
+        int index = boyerMoore.solution("ABCABDAB", "ABDAB");
+        assertEquals(3, index);
+    }
+
+    @Test
+    void solution6() {
+        int index = boyerMoore.solution("ABBBABAB", "ABAB");
+        assertEquals(4, index);
+    }
+
 }

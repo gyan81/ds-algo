@@ -1,13 +1,14 @@
 package com.mac.java.algorithm.pattern.matching;
 
-public class BoyerMoore {
-    private final static int NUM_OF_CHARS = 256;
+import java.util.HashMap;
+import java.util.Map;
 
+public class BoyerMoore {
     public int solution(String text, String pattern) {
         int n = text.length(), m = pattern.length();
         if (n >= m) {
             int s = 0;
-            int[] table = preprocessTable(pattern);
+            Map<Character, Integer> table = preprocessTable(pattern);
             while (s <= (n - m)) {
                 int j = m - 1;
                 while (j >= 0 && pattern.charAt(j) == text.charAt(s + j)) {
@@ -16,7 +17,8 @@ public class BoyerMoore {
                 if (j < 0) {
                     return s;
                 } else {
-                    s += Math.max(j - table[text.charAt(s + j)], 1);
+                    int index = table.get(text.charAt(s + j)) != null ? table.get(text.charAt(s + j)) : -1;
+                    s += Math.max(1, j - index);
                 }
             }
         }
@@ -27,18 +29,13 @@ public class BoyerMoore {
      * Calculating the table based upon Bad Character Rule.
      *
      * @param pattern of String type
-     * @return int[]
+     * @return Map<Character, Integer>
      */
-    private int[] preprocessTable(String pattern) {
-        int[] table = new int[NUM_OF_CHARS];
+    private Map<Character, Integer> preprocessTable(String pattern) {
+        Map<Character, Integer> table = new HashMap<>();
         int i = 0;
-        while (i < table.length) {
-            table[i++] = -1;
-        }
-
-        i = 0;
         while (i < pattern.length()) {
-            table[pattern.charAt(i)] = i;
+            table.put(pattern.charAt(i), i);
             i++;
         }
         return table;
