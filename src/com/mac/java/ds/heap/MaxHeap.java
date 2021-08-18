@@ -8,12 +8,25 @@ a[(i*2) + 1] = left Child
 a[(i*2) + 2] = right Child
  */
 public class MaxHeap {
+
+    public static void main(String[] args) {
+        int k = 5;
+        MaxHeap maxHeap = new MaxHeap(7);
+        int[] data = {15, 10, 20, 40, 30, 25, 35};
+
+        System.out.println(Arrays.toString(data));
+        for (int e : data) {
+            maxHeap.insert(e);
+        }
+    }
+
     private int size = 0, count = 0;
     private int[] heap = null;
 
     MaxHeap(int size) {
         this.size = size;
         heap = new int[size];
+        Arrays.fill(heap, Integer.MIN_VALUE);
     }
 
 
@@ -37,11 +50,13 @@ public class MaxHeap {
 
 
     public void insert(int e) {
+//        if (count == size) {
+//            resize();
+//        }
+        int i = 0;
+        while (i < heap.length) {
 
-        if (count == size) {
-            resize();
         }
-
 
     }
 
@@ -81,14 +96,5 @@ public class MaxHeap {
         }
     }
 
-    public static void main(String[] args) {
-        MaxHeap maxHeap = new MaxHeap(5);
-        int[] data = {15, 10, 20, 40, 30};
-
-        System.out.println(Arrays.toString(data));
-//        for (int e : data) {
-//            maxHeap.insert(e);
-//        }
-    }
 
 }
